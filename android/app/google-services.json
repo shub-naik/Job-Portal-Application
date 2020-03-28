@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "577993450605",
+    "firebase_url": "https://heera-polish.firebaseio.com",
+    "project_id": "heera-polish",
+    "storage_bucket": "heera-polish.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:577993450605:android:1d0fa2b3c8e328d21e4b64",
+        "android_client_info": {
+          "package_name": "com.example.hera_polish"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "577993450605-a5qkgl6pos6d7f3ob3351ceelj3c6e2g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.hera_polish",
+            "certificate_hash": "0bef717a8fd9078d4fb1e102f435e5598720443b"
+          }
+        },
+        {
+          "client_id": "577993450605-ktqes7f6dq71jfqjhs26buai4fd1gt0i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCN-8-fUh_O5iMZ3Swjo6Tabax6wgp1SJ0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "577993450605-ktqes7f6dq71jfqjhs26buai4fd1gt0i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
