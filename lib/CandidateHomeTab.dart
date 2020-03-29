@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';
 import 'dart:convert';
-import 'package:heera_polish/CandidateJobDetail.dart';
 import 'package:mdi/mdi.dart';
+import 'CandidateJobDetail.dart';
 
 class _ArticleDescription extends StatelessWidget {
   _ArticleDescription(

@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:heera_polish/SelectRole.dart';
-import 'package:heera_polish/CandidateJobsAppliedTab.dart';
-import 'package:heera_polish/CandidateHomeTab.dart';
-import 'package:heera_polish/CandidateProfileTab.dart';
+import 'SelectRole.dart';
+import 'CandidateJobsAppliedTab.dart';
+import 'CandidateHomeTab.dart';
+import 'CandidateProfileTab.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
 

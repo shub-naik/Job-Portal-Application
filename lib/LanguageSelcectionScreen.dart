@@ -1,4 +1,8 @@
+import 'package:JobPortal/SelectRole.dart';
 import 'package:flutter/material.dart';
+
+import 'app_translations.dart';
+import 'application.dart';
 
 class LanguageSelcectionScreen extends StatefulWidget {
   @override
@@ -8,11 +12,37 @@ class LanguageSelcectionScreen extends StatefulWidget {
 
 class _LanguageSelcectionScreenState extends State<LanguageSelcectionScreen> {
 
+  static final List<String> languagesList = application.supportedLanguages;
+  static final List<String> languageCodesList =
+      application.supportedLanguagesCodes;
+
+  final Map<dynamic, dynamic> languagesMap = {
+    languagesList[0]: languageCodesList[0],
+    languagesList[1]: languageCodesList[1],
+    languagesList[2]: languageCodesList[2],
+  };
+
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
+    application.onLocaleChanged = onLocaleChange;
+    onLocaleChange(Locale(languagesMap["Hindi"]));
+    onLocaleChange(Locale(languagesMap["Marathi"]));
   }
+
+  void onLocaleChange(Locale locale) async {
+    setState(() {
+      AppTranslations.load(locale);
+    });
+  }
+
+  void _select(String language) {
+    print("dd " + language);
+    onLocaleChange(Locale(languagesMap[language]));
+    setState(() {
+    });
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +72,9 @@ class _LanguageSelcectionScreenState extends State<LanguageSelcectionScreen> {
             side: new BorderSide(color: Colors.red),
           ),
           onPressed: () {
-            Navigator.pushNamed(context, '/select_role');
+            _select(btnValue);
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => SelectRole()));
           },
           color: Colors.white,
           child: Padding(
@@ -75,10 +107,10 @@ class _LanguageSelcectionScreenState extends State<LanguageSelcectionScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
-                CustomButton("Hindi"),
                 CustomButton("English"),
+                CustomButton("Hindi"),
                 CustomButton("Marathi"),
-                CustomButton("Bengali"),
+//                CustomButton("Bengali"),
               ],
             ),
           ),

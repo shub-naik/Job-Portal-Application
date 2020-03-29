@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:heera_polish/EmployerProfileSection.dart';
+import 'EmployerProfileSection.dart';
 import 'CandidateFilterJobs.dart';
 import 'CandidateLogin.dart';
 import 'CandidateSection.dart';

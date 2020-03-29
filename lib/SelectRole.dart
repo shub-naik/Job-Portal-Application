@@ -1,4 +1,7 @@
+import 'package:JobPortal/CandidateSignupPage.dart';
+import 'package:JobPortal/EmployerSection.dart';
 import 'package:flutter/material.dart';
+import 'app_translations.dart';
 
 class SelectRole extends StatefulWidget {
   @override
@@ -6,6 +9,13 @@ class SelectRole extends StatefulWidget {
 }
 
 class _SelectRoleState extends State<SelectRole> {
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,13 +39,14 @@ class _SelectRoleState extends State<SelectRole> {
                   side: new BorderSide(color: Colors.red),
                 ),
                 onPressed: () {
-                  Navigator.pushNamed(context, '/employer_section');
+                  Navigator.push(
+                      context, MaterialPageRoute(builder: (context) => EmployerSection()));
                 },
                 color: Colors.white,
                 child: Padding(
                   padding: EdgeInsets.fromLTRB(15, 20, 15, 20),
                   child: Text(
-                    'I want to hire',
+                    AppTranslations.of(context).text("I Want to Hire"),
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 22,
@@ -59,13 +70,14 @@ class _SelectRoleState extends State<SelectRole> {
                   side: new BorderSide(color: Colors.red),
                 ),
                 onPressed: () {
-                  Navigator.pushNamed(context, '/CandidateSignUpSection');
+                  Navigator.push(
+                      context, MaterialPageRoute(builder: (context) => CandidateSignUpSection()));
                 },
                 color: Colors.white,
                 child: Padding(
                   padding: EdgeInsets.fromLTRB(15, 20, 15, 20),
                   child: Text(
-                    'I am a candidate',
+                    AppTranslations.of(context).text("I am a Candidate"),
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 22,

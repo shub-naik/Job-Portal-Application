@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'package:http/http.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter/material.dart';
-import 'package:heera_polish/EmployerManageJobs.dart';
+import 'EmployerManageJobs.dart';
 import 'package:flutter_multiselect/flutter_multiselect.dart';
 import 'package:flutter_country_picker/flutter_country_picker.dart';
 

@@ -3,7 +3,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
-import 'package:heera_polish/EmployerManageJobs.dart';
+import 'EmployerManageJobs.dart';
 import 'Employer_zone_company_profile.dart';
 import 'Employer_zone_home.dart';
 import 'Employer_zone_transactions.dart';

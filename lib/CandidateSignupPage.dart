@@ -6,6 +6,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:http/http.dart';
 
 import 'CandidateMobileVerification.dart';
+import 'app_translations.dart';
 
 class CandidateSignUpSection extends StatefulWidget {
   @override
@@ -168,7 +169,7 @@ class _CandidateSignUpSection extends State<CandidateSignUpSection> {
                               Navigator.pushNamed(context, "/CandidateLogin");
                             },
                             child: new Text(
-                              "Already Have An Account ?  Login Here",
+                              AppTranslations.of(context).text("Already Have An Account ?  Login Here"),
                               style: TextStyle(
                                   color: Colors.redAccent,
                                   fontWeight: FontWeight.bold,

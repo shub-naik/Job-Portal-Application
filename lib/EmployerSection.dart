@@ -2,7 +2,7 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:heera_polish/EmployerMobileVerification.dart';
+import 'EmployerMobileVerification.dart';
 import 'package:http/http.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 

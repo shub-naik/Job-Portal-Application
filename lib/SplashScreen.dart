@@ -1,6 +1,8 @@
 import 'dart:async';
-import 'package:heera_polish/Candidate_Zone.dart';
-import 'package:heera_polish/LanguageSelcectionScreen.dart';
+import 'package:JobPortal/LanguageSelectionContainer.dart';
+
+import 'Candidate_Zone.dart';
+import 'LanguageSelcectionScreen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter/material.dart';
 import 'package:mdi/mdi.dart';
@@ -31,7 +33,7 @@ class _SplashScreenState extends State<SplashScreen> {
         Navigator.pushReplacement(
             context,
             MaterialPageRoute(
-                builder: (context) => LanguageSelcectionScreen()));
+                builder: (context) => LanguageSelectionContainer()));
       }
     }
 
