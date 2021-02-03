@@ -2,7 +2,6 @@ import 'dart:async';
 import 'package:JobPortal/LanguageSelectionContainer.dart';
 
 import 'Candidate_Zone.dart';
-import 'LanguageSelcectionScreen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter/material.dart';
 import 'package:mdi/mdi.dart';

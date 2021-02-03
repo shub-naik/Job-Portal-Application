@@ -15,8 +15,6 @@ class CandidateSignupPersonalDetails extends StatefulWidget {
 
   CandidateSignupPersonalDetails({this.username, this.mobile});
 
-
-
   @override
   _CandidateSignupPersonalDetailsState createState() =>
       _CandidateSignupPersonalDetailsState(username, mobile);
@@ -24,7 +22,7 @@ class CandidateSignupPersonalDetails extends StatefulWidget {
 
 class _CandidateSignupPersonalDetailsState
     extends State<CandidateSignupPersonalDetails> {
-  List<dynamic> FieldListValue =[];
+  List<dynamic> FieldListValue = [];
   // For Makable and Fadchi
   String mainService, subMainService, field;
   bool boolSubCategory = true;
@@ -632,11 +630,11 @@ class _CandidateSignupPersonalDetailsState
 
     // Find the mime type of the selected file by looking at the header bytes of the file
     final mimeTypeData =
-    lookupMimeType(image.path, headerBytes: [0xFF, 0xD8]).split('/');
+        lookupMimeType(image.path, headerBytes: [0xFF, 0xD8]).split('/');
 
     // Intilize the multipart request
     final imageUploadRequest =
-    http.MultipartRequest('POST', Uri.parse(baseUrl));
+        http.MultipartRequest('POST', Uri.parse(baseUrl));
 
     // Attach the file in the request
     final file = await http.MultipartFile.fromPath('image', image.path,
@@ -763,9 +761,6 @@ class _CandidateSignupPersonalDetailsState
 
   // Image Upload Functions Ends Here
 
-
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -785,11 +780,12 @@ class _CandidateSignupPersonalDetailsState
                   children: <Widget>[
                     // For Image Upload
                     Padding(
-                      padding: const EdgeInsets.only(top: 40.0, left: 10.0, right: 10.0),
+                      padding: const EdgeInsets.only(
+                          top: 40.0, left: 10.0, right: 10.0),
                       child: OutlineButton(
                         onPressed: () => _openImagePickerModal(context),
-                        borderSide:
-                        BorderSide(color: Theme.of(context).accentColor, width: 1.0),
+                        borderSide: BorderSide(
+                            color: Theme.of(context).accentColor, width: 1.0),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
@@ -805,12 +801,12 @@ class _CandidateSignupPersonalDetailsState
                     _imageFile == null
                         ? Text('Please pick an image')
                         : Image.file(
-                      _imageFile,
-                      fit: BoxFit.cover,
-                      height: 300.0,
-                      alignment: Alignment.topCenter,
-                      width: MediaQuery.of(context).size.width,
-                    ),
+                            _imageFile,
+                            fit: BoxFit.cover,
+                            height: 300.0,
+                            alignment: Alignment.topCenter,
+                            width: MediaQuery.of(context).size.width,
+                          ),
 //                    _buildUploadBtn(),
                     // Image Upload Ends Here
                     Container(
@@ -836,14 +832,16 @@ class _CandidateSignupPersonalDetailsState
                                 Text(
                                   "Username : " + username,
                                   style: TextStyle(
-                                      fontWeight: FontWeight.bold, fontSize: 20),
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 20),
                                 ),
                                 SizedBox(
                                   height: 10,
                                 ),
-                                Text('Phone Number : '+mobilefieldvalue,
+                                Text('Phone Number : ' + mobilefieldvalue,
                                     style: TextStyle(
-                                        fontWeight: FontWeight.bold, fontSize: 20)),
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 20)),
                                 SizedBox(
                                   height: 10,
                                 ),
@@ -858,7 +856,8 @@ class _CandidateSignupPersonalDetailsState
                                 RaisedButton(
                                     color: Colors.black26,
                                     child: _dob == null
-                                        ? Text('Click to Pick your Date Of Birth',
+                                        ? Text(
+                                            'Click to Pick your Date Of Birth',
                                             style: TextStyle(
                                                 color: Colors.white,
                                                 fontWeight: FontWeight.bold,
@@ -897,7 +896,8 @@ class _CandidateSignupPersonalDetailsState
                                   height: 10,
                                 ),
                                 DropdownButton<String>(
-                                  items: gender.map((String dropDownStringItem) {
+                                  items:
+                                      gender.map((String dropDownStringItem) {
                                     return DropdownMenuItem<String>(
                                         value: dropDownStringItem,
                                         child: Text(dropDownStringItem));
@@ -922,7 +922,8 @@ class _CandidateSignupPersonalDetailsState
                                   }).toList(),
                                   onChanged: (String newValueSelected) {
                                     setState(() {
-                                      this.socialcategoryvalue = newValueSelected;
+                                      this.socialcategoryvalue =
+                                          newValueSelected;
                                     });
                                   },
                                   hint: Text('Select the Social Category'),
@@ -966,7 +967,8 @@ class _CandidateSignupPersonalDetailsState
                                   }).toList(),
                                   onChanged: (String newValueSelected) {
                                     setState(() {
-                                      this.qualificationvalue = newValueSelected;
+                                      this.qualificationvalue =
+                                          newValueSelected;
                                     });
                                   },
                                   hint: Text('Select the Qualification'),
@@ -1015,7 +1017,8 @@ class _CandidateSignupPersonalDetailsState
                                           onChanged: (bool value) {
                                             setState(() {
                                               boolPermanentAddress = value;
-                                              if (boolPermanentAddress == true) {
+                                              if (boolPermanentAddress ==
+                                                  true) {
                                                 _permanent_address.text =
                                                     _temporary_address.text;
                                                 print(_permanent_address.text);
@@ -1080,8 +1083,9 @@ class _CandidateSignupPersonalDetailsState
                                       valueChanged(value);
                                     }),
                                 DropdownButton(
-                                  items: citiesList.map<DropdownMenuItem<String>>(
-                                      (String value) {
+                                  items: citiesList
+                                      .map<DropdownMenuItem<String>>(
+                                          (String value) {
                                     return DropdownMenuItem<String>(
                                       value: value,
                                       child: Text(value),
@@ -1106,7 +1110,8 @@ class _CandidateSignupPersonalDetailsState
                                     );
                                   }).toList(),
                                   hint: Text('Select Services'),
-                                  onChanged: (_value) => FieldValueChanged(_value),
+                                  onChanged: (_value) =>
+                                      FieldValueChanged(_value),
                                   value: mainService,
                                 ),
                                 DropdownButton<String>(
@@ -1117,7 +1122,8 @@ class _CandidateSignupPersonalDetailsState
                                   hint: Text('Select Services'),
                                   disabledHint:
                                       Text('Please Select Services First'),
-                                  value: boolSubCategory ? null : subMainService,
+                                  value:
+                                      boolSubCategory ? null : subMainService,
                                 ),
                                 MultiSelect(
                                   autovalidate: true,
@@ -1162,7 +1168,8 @@ class _CandidateSignupPersonalDetailsState
                                   child: RaisedButton(
                                     splashColor: Colors.blue,
                                     shape: new RoundedRectangleBorder(
-                                      borderRadius: new BorderRadius.circular(40),
+                                      borderRadius:
+                                          new BorderRadius.circular(40),
                                       side: new BorderSide(color: Colors.red),
                                     ),
                                     onPressed: () async {

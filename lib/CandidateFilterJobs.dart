@@ -25,8 +25,8 @@ class _CandidateFilterJobsState extends State<CandidateFilterJobs> {
 
   static Future<List<Map<String, dynamic>>> getJobList() async {
     List<Map<String, dynamic>> suggestionList = [];
-    var data =
-        await post('http://freetechtip.in/app/file/candidate_show_jobs_list.php');
+    var data = await post(
+        'http://freetechtip.in/app/file/candidate_show_jobs_list.php');
 
     var jsonData = jsonDecode(data.body);
     jsonData.forEach((element) {
@@ -225,50 +225,50 @@ class _CandidateFilterJobsState extends State<CandidateFilterJobs> {
                 ))
               : Expanded(
                   child: ListView.builder(
-                      itemCount: suggesterList.length,
-                      itemBuilder: (BuildContext buildContext, int index) {
-                        return ListTile(
-                          onTap: () {
-                            Navigator.push(
-                                context,
-                                new MaterialPageRoute(
-                                    builder: (context) => CandidateJobDetail(
-                                        JobDetail: suggesterList[index])));
-                          },
-                          leading:
-                              suggesterList[index]['Job-type'] == "Part-Time"
-                                  ? CircleAvatar(
-                                      backgroundColor: Colors.orangeAccent,
-                                      backgroundImage:
-                                          AssetImage('assets/part_time.png'))
-                                  : CircleAvatar(
-                                      backgroundColor: Colors.orangeAccent,
-                                      backgroundImage:
-                                          AssetImage('assets/full_time.png')),
-                          title: Text(
-                            suggesterList[index]['job-title']
-                                .toString()
-                                .toLowerCase(),
-                            maxLines: 2,
-                            overflow: TextOverflow.ellipsis,
-                            style: const TextStyle(
-                              fontWeight: FontWeight.bold,
-                            ),
+                    itemCount: suggesterList.length,
+                    itemBuilder: (BuildContext buildContext, int index) {
+                      return ListTile(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              new MaterialPageRoute(
+                                  builder: (context) => CandidateJobDetail(
+                                      JobDetail: suggesterList[index])));
+                        },
+                        leading: suggesterList[index]['Job-type'] == "Part-Time"
+                            ? CircleAvatar(
+                                backgroundColor: Colors.orangeAccent,
+                                backgroundImage:
+                                    AssetImage('assets/part_time.png'))
+                            : CircleAvatar(
+                                backgroundColor: Colors.orangeAccent,
+                                backgroundImage:
+                                    AssetImage('assets/full_time.png')),
+                        title: Text(
+                          suggesterList[index]['job-title']
+                              .toString()
+                              .toLowerCase(),
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis,
+                          style: const TextStyle(
+                            fontWeight: FontWeight.bold,
                           ),
-                          subtitle: Text(
-                            suggesterList[index]['description']
-                                .toString()
-                                .toLowerCase(),
-                            maxLines: 2,
-                            overflow: TextOverflow.ellipsis,
-                            style: const TextStyle(
-                              fontSize: 12.0,
-                              color: Colors.black54,
-                            ),
+                        ),
+                        subtitle: Text(
+                          suggesterList[index]['description']
+                              .toString()
+                              .toLowerCase(),
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis,
+                          style: const TextStyle(
+                            fontSize: 12.0,
+                            color: Colors.black54,
                           ),
-                        );
-                      }),
-                )
+                        ),
+                      );
+                    },
+                  ),
+                ),
         ],
       ),
     );

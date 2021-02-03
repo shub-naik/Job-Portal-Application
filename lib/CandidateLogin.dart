@@ -7,6 +7,7 @@ import 'Animation/FadeAnimation.dart';
 import 'package:http/http.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'Candidate_Zone.dart';
+import 'app_translations.dart';
 
 class CandidateLogin extends StatefulWidget {
   @override
@@ -60,12 +61,13 @@ class _CandidateLoginState extends State<CandidateLogin> {
                         width: 80,
                         height: 150,
                         child: FadeAnimation(
-                            1.3,
-                            Container(
-                              decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                      image: AssetImage('assets/light-2.png'))),
-                            )),
+                          1.3,
+                          Container(
+                            decoration: BoxDecoration(
+                                image: DecorationImage(
+                                    image: AssetImage('assets/light-2.png'))),
+                          ),
+                        ),
                       ),
                       Positioned(
                         right: 40,
@@ -131,7 +133,8 @@ class _CandidateLoginState extends State<CandidateLogin> {
                                         border: InputBorder.none,
                                         hintText: "Phone Number",
                                         errorText: phone_validate
-                                            ? 'Phone Number Value Can\'t Be Empty'
+                                            ? AppTranslations.of(context).text(
+                                                "Phone Number Value Can\\'t Be Empty")
                                             : null,
                                         hintStyle:
                                             TextStyle(color: Colors.grey[400])),
@@ -143,7 +146,8 @@ class _CandidateLoginState extends State<CandidateLogin> {
                                     controller: PasswordController,
                                     decoration: InputDecoration(
                                         errorText: password_validate
-                                            ? 'Password Value Can\'t Be Empty'
+                                            ? AppTranslations.of(context).text(
+                                                "Password Value Can\\'t Be Empty")
                                             : null,
                                         border: InputBorder.none,
                                         hintText: "Password",
@@ -254,7 +258,7 @@ class _CandidateLoginState extends State<CandidateLogin> {
                                   }
                                 },
                                 child: Text(
-                                  "Login",
+                                  AppTranslations.of(context).text("Login"),
                                   style: TextStyle(
                                       color: Colors.white,
                                       fontWeight: FontWeight.bold),

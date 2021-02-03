@@ -1,5 +1,16 @@
 {
   "I Want to Hire" : "मैं पारिश्रमिक चाहता हूं",
   "I am a Candidate" : "मैं एक कैंडिडेट हूं",
-  "Already Have An Account ?  Login Here" : "क्या आपके पास पहले से एक खाता मौजूद है ? यहां लॉगिन करें"
+  "Already Have An Account ?  Login Here" : "क्या आपके पास पहले से एक खाता मौजूद है ? यहां लॉगिन करें",
+  "GET OTP" : "OTP प्राप्त करें",
+  "6 Letters Name is Required" : "6 पत्रों का नाम आवश्यक है",
+  "Valid And Correct Email is Required" : "वमान्य और सही ईमेल आवश्यक है",
+  "Correct 10 digit Phone Number is Required" : "सही 10 अंकों का फोन नंबर आवश्यक है",
+  "8 Letter Password is Required" : "8 पत्र पासवर्ड आवश्यक है",
+  "Resend OTP" : "ओटीपी पुनः भेजें",
+  "Correct 5 digit OTP is Required" : "सही 5 अंकों का ओटीपी आवश्यक है",
+  "Verify Mobile Number" : "मोबाइल नंबर सत्यापित करें",
+  "Login" : "लॉग इन करें",
+  "Password Value Can\\'t Be Empty" : "पासवर्ड मान रिक्त नहीं हो सकता",
+  "Phone Number Value Can\\'t Be Empty" : "फ़ोन नंबर का मूल्य रिक्त नहीं हो सकता"
 }

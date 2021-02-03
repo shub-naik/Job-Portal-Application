@@ -221,9 +221,11 @@ class _EmployerLoginState extends State<EmployerLogin> {
                                         });
                                     Map<String, dynamic> map =
                                         jsonDecode(response.body);
-                                    print('-----------------------------------------');
+                                    print(
+                                        '-----------------------------------------');
                                     print(map);
-                                    print('-----------------------------------------');
+                                    print(
+                                        '-----------------------------------------');
                                     if (map['success'] == 'true') {
                                       Navigator.pop(context);
                                       Fluttertoast.showToast(
@@ -242,8 +244,8 @@ class _EmployerLoginState extends State<EmployerLogin> {
                                                 .getInstance();
                                         prefs.setString('EmployerEmail',
                                             EmailController.text.toString());
-                                        prefs.setString('emp_id',
-                                            map['emp_id'].toString());
+                                        prefs.setString(
+                                            'emp_id', map['emp_id'].toString());
                                         prefs.setString('emp_name',
                                             map['emp_name'].toString());
                                       }
@@ -318,14 +320,16 @@ class _EmployerLoginState extends State<EmployerLogin> {
                                   "http://freetechtip.in/app/file/employer_login.php",
                                   body: {
                                     'Email': googleSignIn.currentUser.email,
-                                    'email_login':'email_login'
+                                    'email_login': 'email_login'
                                   });
 
                               Map<String, dynamic> map =
                                   jsonDecode(response.body);
-                              print('-----------------------------------------');
+                              print(
+                                  '-----------------------------------------');
                               print(map);
-                              print('-----------------------------------------');
+                              print(
+                                  '-----------------------------------------');
                               if (map['error'] == "true") {
                                 Fluttertoast.showToast(
                                     msg: googleSignIn.currentUser.email +
@@ -339,7 +343,8 @@ class _EmployerLoginState extends State<EmployerLogin> {
                                 googleSignIn.signOut();
                               } else {
                                 Fluttertoast.showToast(
-                                    msg: googleSignIn.currentUser.email + " Logged In Successfully",
+                                    msg: googleSignIn.currentUser.email +
+                                        " Logged In Successfully",
                                     toastLength: Toast.LENGTH_LONG,
                                     gravity: ToastGravity.BOTTOM,
                                     timeInSecForIos: 1,
@@ -347,22 +352,20 @@ class _EmployerLoginState extends State<EmployerLogin> {
                                     textColor: Colors.white,
                                     fontSize: 16.0);
                                 SharedPreferences prefs =
-                                await SharedPreferences
-                                    .getInstance();
+                                    await SharedPreferences.getInstance();
                                 prefs.setString('EmployerEmail',
                                     EmailController.text.toString());
-                                prefs.setString('emp_id',
-                                    map['emp_id'].toString());
-                                prefs.setString('emp_name',
-                                    map['emp_name'].toString());
-                                Navigator.pushNamedAndRemoveUntil(context,
-                                    "/EmployerZone", (r) => false);
+                                prefs.setString(
+                                    'emp_id', map['emp_id'].toString());
+                                prefs.setString(
+                                    'emp_name', map['emp_name'].toString());
+                                Navigator.pushNamedAndRemoveUntil(
+                                    context, "/EmployerZone", (r) => false);
                                 //redirect to the employer dashboard page.
                                 Navigator.pushReplacement(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) =>
-                                            Employer_Zone()));
+                                        builder: (context) => Employer_Zone()));
                               }
                             },
                           ),

@@ -1,6 +1,6 @@
+import 'package:JobPortal/LanguageSelectionContainer.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'SelectRole.dart';
 import 'CandidateJobsAppliedTab.dart';
 import 'CandidateHomeTab.dart';
 import 'CandidateProfileTab.dart';
@@ -58,7 +58,7 @@ class _Candidate_ZoneState extends State<Candidate_Zone> {
         final prefrences = await SharedPreferences.getInstance();
         await prefrences.clear();
         Navigator.pushReplacement(
-            context, MaterialPageRoute(builder: (context) => SelectRole()));
+            context, MaterialPageRoute(builder: (context) => LanguageSelectionContainer()));
       } else if (value == 'Change Password') {
         Navigator.pushNamed(context, '/ChangePassword');
       } else {}

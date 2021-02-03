@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:http/http.dart';
-
 import 'CandidateMobileVerification.dart';
 import 'app_translations.dart';
 
@@ -29,7 +28,7 @@ class _CandidateSignUpSection extends State<CandidateSignUpSection> {
         decoration: InputDecoration(labelText: "Username"),
         validator: (String value) {
           if (value.length < 6) {
-            return '6 Letters Name is Required';
+            return  AppTranslations.of(context).text("6 Letters Name is Required");
           }
           return null;
         },
@@ -46,7 +45,7 @@ class _CandidateSignUpSection extends State<CandidateSignUpSection> {
           if (!RegExp(
                   r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$')
               .hasMatch(value)) {
-            return 'Valid And Correct Email is Required';
+            return  AppTranslations.of(context).text("Valid And Correct Email is Required");
           }
           return null;
         },
@@ -61,7 +60,7 @@ class _CandidateSignUpSection extends State<CandidateSignUpSection> {
         keyboardType: TextInputType.phone,
         validator: (String value) {
           if (!RegExp(r"^(?:[+0]9)?[0-9]{10}$").hasMatch(value)) {
-            return 'Correct 10 digit Phone Number is Required';
+            return  AppTranslations.of(context).text("Correct 10 digit Phone Number is Required");
           }
           return null;
         },
@@ -91,7 +90,7 @@ class _CandidateSignUpSection extends State<CandidateSignUpSection> {
         ),
         validator: (String value) {
           if (value.length < 8) {
-            return '8 Letter Password is Required';
+            return  AppTranslations.of(context).text("8 Letter Password is Required");
           }
           return null;
         },
@@ -117,7 +116,7 @@ class _CandidateSignUpSection extends State<CandidateSignUpSection> {
   Widget setUpButtonChild() {
     if (_state == 0) {
       return new Text(
-        "GET OTP",
+        AppTranslations.of(context).text("GET OTP"),
         style: const TextStyle(
           color: Colors.black,
           fontSize: 20.0,
@@ -169,7 +168,8 @@ class _CandidateSignUpSection extends State<CandidateSignUpSection> {
                               Navigator.pushNamed(context, "/CandidateLogin");
                             },
                             child: new Text(
-                              AppTranslations.of(context).text("Already Have An Account ?  Login Here"),
+                              AppTranslations.of(context).text(
+                                  "Already Have An Account ?  Login Here"),
                               style: TextStyle(
                                   color: Colors.redAccent,
                                   fontWeight: FontWeight.bold,
@@ -224,10 +224,10 @@ class _CandidateSignUpSection extends State<CandidateSignUpSection> {
                                       backgroundColor: Colors.red,
                                       textColor: Colors.white,
                                       fontSize: 16.0);
-                                } else if(map['otp'].toString().isNotEmpty){
+                                } else if (map['otp'].toString().isNotEmpty) {
                                   addIntToSF() async {
                                     SharedPreferences prefs =
-                                    await SharedPreferences.getInstance();
+                                        await SharedPreferences.getInstance();
                                     prefs.setInt('Otp', map['otp']);
                                     prefs.setInt('Mobile', int.parse(Mobile));
                                     prefs.setString('Username', Username);
@@ -240,7 +240,6 @@ class _CandidateSignUpSection extends State<CandidateSignUpSection> {
                                           builder: (context) =>
                                               CandidateMobileVerification()));
                                 }
-
                               } else {
                                 return;
                               }

@@ -1,5 +1,16 @@
 {
   "I Want to Hire" : "I Want to Hire",
   "I am a Candidate" : "I am a Candidate",
-  "Already Have An Account ?  Login Here" : "Already Have An Account ?  Login Here"
+  "Already Have An Account ?  Login Here" : "Already Have An Account ?  Login Here",
+  "GET OTP" : "GET OTP",
+  "6 Letters Name is Required" : "6 Letters Name is Required",
+  "Valid And Correct Email is Required" : "Valid And Correct Email is Required",
+  "Correct 10 digit Phone Number is Required" : "Correct 10 digit Phone Number is Required",
+  "8 Letter Password is Required" : "8 Letter Password is Required",
+  "Resend OTP" : "Resend OTP",
+  "Correct 5 digit OTP is Required" : "Correct 5 digit OTP is Required",
+  "Verify Mobile Number" : "Verify Mobile Number",
+  "Login": "Login",
+  "Password Value Can\\'t Be Empty" : "Password Value Can\\'t Be Empty",
+  "Phone Number Value Can\\'t Be Empty" : "Phone Number Value Can\\'t Be Empty"
 }

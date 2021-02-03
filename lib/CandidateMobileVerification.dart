@@ -6,7 +6,7 @@ import 'package:http/http.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'CandidateSignupPersonalDetails.dart';
-import 'EmployerProfileSection.dart';
+import 'app_translations.dart';
 
 class CandidateMobileVerification extends StatefulWidget {
   @override
@@ -49,7 +49,7 @@ class _CandidateMobileVerificationState
 
   Widget resendOTP() {
     return RaisedButton(
-      child: Text('Resend OTP'),
+      child: Text( AppTranslations.of(context).text("Resend OTP")),
       onPressed: () {
         //await CallAgain();
         CallTimer();
@@ -82,7 +82,7 @@ class _CandidateMobileVerificationState
           maxLength: 5,
           validator: (String value) {
             if (!RegExp(r"^(?:[+0]9)?[0-9]{5}$").hasMatch(value)) {
-              return 'Correct 5 digit OTP is Required';
+              return  AppTranslations.of(context).text("Correct 5 digit OTP is Required");
             }
             return null;
           },
@@ -148,7 +148,7 @@ class _CandidateMobileVerificationState
                       return;
                     }
                   },
-                  child: Text("Verify Mobile Number")),
+                  child: Text( AppTranslations.of(context).text("Verify Mobile Number"))),
               Text("OTP will expire in " + counter.toString() + " seconds"),
               isExpired ? resendOTP() : Text(''),
             ],
